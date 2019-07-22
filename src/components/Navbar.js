@@ -10,7 +10,11 @@ class Navbar extends React.Component {
             <img src={logo} alt="Car Rental Gateway" />
           </div>
           <nav>
-            <p>This is the nav.</p>
+            <ul>
+              <li>Menu 1</li>
+              <li>Menu 2</li>
+              <li>Menu 3</li>
+            </ul>
           </nav>
         </div>
       </div>

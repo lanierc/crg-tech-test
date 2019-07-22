@@ -201,10 +201,28 @@ input::-moz-focus-inner {
 }
 
 .navbar .grid-container {
+  width: 90%;
   display: grid;
-  grid-template-columns: 1fr 7fr;
+  grid-template-columns: 1fr 6fr;
+  margin: 0 auto;
 }
 
 .navbar .grid-container .logo img {
   width: 100%;
+}
+
+.navbar .grid-container nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+
+.navbar .grid-container nav ul li {
+  padding-right: 15px;
+}
+
+.navbar .grid-container nav ul li:last-of-type {
+  padding-right: 0;
 }
