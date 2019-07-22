@@ -195,3 +195,16 @@ input::-moz-focus-inner {
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background: grey;
+}
+
+.navbar .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+
+.navbar .grid-container .logo img {
+  width: 100%;
+}
