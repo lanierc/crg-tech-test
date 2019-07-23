@@ -162,42 +162,12 @@ input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  font-family: "Roboto";
 }
 
 .navbar {
-  background: grey;
+  background: #f5f5f5;
 }
 
 .navbar .grid-container {
@@ -216,13 +186,46 @@ input::-moz-focus-inner {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-right: 10%;
 }
 
-.navbar .grid-container nav ul li {
-  padding-right: 15px;
+.navbar .grid-container nav ul.main-menu > li {
+  position: relative;
 }
 
-.navbar .grid-container nav ul li:last-of-type {
-  padding-right: 0;
+.navbar .grid-container nav ul.main-menu li a {
+  color: #707070;
+  display: inline-block;
+  padding: 5px 20px;
+}
+
+.navbar .grid-container nav ul.main-menu li a:hover {
+  color: #333131;
+}
+
+.navbar .grid-container nav ul.main-menu > li > a span {
+  display: inline-block;
+  padding-left: 5px;
+  color: white;
+}
+
+.navbar .grid-container nav ul.main-menu > li ul.sub-menu {
+  display: none;
+  position: absolute;
+  background: #f5f5f5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  left: 0;
+}
+
+.navbar .grid-container nav ul.main-menu > li ul.sub-menu li > a span {
+  border-bottom: 4px solid #707070;
+}
+
+.navbar .grid-container nav ul.main-menu > li ul.sub-menu li > a:hover span {
+  border-bottom: 4px solid #333131;
+}
+
+.navbar .grid-container nav ul.main-menu li:hover ul.sub-menu {
+  display: block;
 }
