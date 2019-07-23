@@ -168,11 +168,108 @@ body {
 
 .navbar {
   background: #f5f5f5;
+  height: 9vh;
+}
+
+header {
+  width: 100%;
+  height: 84vh;
+  background: url("./assets/bg.jpg");
+  background-size: cover;
+}
+
+header .grid-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 30px;
+}
+
+header .grid-container .searchbox {
+  margin-top: 3.5rem;
+  background: rgba(87, 87, 87, 0.9);
+  border-radius: 34px;
+  padding: 2.5%;
+}
+
+header .grid-container .searchbox .loading {
+  color: white;
+}
+
+header .grid-container .searchbox input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  border: 0;
+}
+
+header .grid-container .searchbox fieldset {
+  border: 0;
+  padding: 0;
+}
+
+header .grid-container .searchbox fieldset[disabled] {
+  opacity: 0.5;
+}
+
+header .grid-container .searchbox fieldset::before {
+  height: 10px;
+  content: "";
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    #982933 0%,
+    #fff 50%,
+    #982933 100%
+  );
+}
+
+@keyframes loading {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+header .grid-container .searchbox fieldset[aria-busy="true"]::before {
+  background-size: 50% auto;
+  animation: loading 0.5s linear infinite;
+}
+header .grid-container .searchbox input[type="submit"] {
+  margin-top: 15px;
+  background: #982933;
+  border-radius: 36px;
+  color: white;
+  text-transform: uppercase;
+  padding: 15px;
+}
+
+header .grid-container .searchbox label p {
+  color: white;
+}
+
+header .grid-container .title {
+  position: relative;
 }
 
 .container {
   width: 95%;
   margin: 0 auto;
+}
+
+h1 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: -5px -5px 0 #000, 5px -5px 0 #000, -5px 5px 0 #000,
+    5px 5px 0 #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
 .navbar .grid-container {
