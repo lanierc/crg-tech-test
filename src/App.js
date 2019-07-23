@@ -4,6 +4,7 @@ import vehicles from "./assets/vehicles.json";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import Footer from "./components/Footer";
 import "./App.css";
 
 class App extends React.Component {
@@ -17,6 +18,7 @@ class App extends React.Component {
         <div className="App">
           <Navbar />
           {this.state.searchResults.length === 0 ? <Header /> : <Search />}
+          <Footer />
         </div>
       </Router>
     );

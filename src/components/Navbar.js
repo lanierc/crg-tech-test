@@ -7,7 +7,7 @@ class Navbar extends React.Component {
     return (
       <Router>
         <div className="navbar">
-          <div className="grid-container">
+          <div className="container grid-container">
             <div className="logo">
               <img src={logo} alt="Car Rental Gateway" />
             </div>
