@@ -35,12 +35,12 @@ class Navbar extends React.Component {
                     <img src={menu} alt="menu" />
                   </a>
                 </li>
-                <li>
+                <li className="first-menu-item">
                   <Link to="#">
                     <a>Menu 1</a>
                   </Link>
                 </li>
-                <li>
+                <li className="menu-item">
                   <Link to="#">
                     <a>
                       Menu 2 <span>▼</span>
@@ -70,7 +70,7 @@ class Navbar extends React.Component {
                     </li>
                   </ul>
                 </li>
-                <li>
+                <li className="menu-item">
                   <Link to="#">
                     <a>Hover</a>
                   </Link>
