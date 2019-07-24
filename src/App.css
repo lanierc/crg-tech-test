@@ -353,6 +353,7 @@ h1 {
 
 .mobile-menu {
   position: absolute;
+  display: none;
   top: 9vh;
   right: -70%;
   visibility: hidden;
