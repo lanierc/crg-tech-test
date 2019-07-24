@@ -12,12 +12,21 @@ class App extends React.Component {
     vehicles,
     searchResults: []
   };
+
+  populateResults = e => {
+    console.log("populating results");
+  };
+
   render() {
     return (
       <Router>
         <div className="App">
           <Navbar />
-          {this.state.searchResults.length === 0 ? <Header /> : <Search />}
+          {this.state.searchResults.length === 0 ? (
+            <Header populateResults={this.populateResults} />
+          ) : (
+            <Search />
+          )}
           <Footer />
         </div>
       </Router>

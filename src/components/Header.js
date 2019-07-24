@@ -22,6 +22,17 @@ class Header extends React.Component {
     await this.setState({
       loading: true
     });
+    setTimeout(() => {
+      this.props.populateResults(
+        this.state.airport,
+        this.state.name,
+        this.state.email,
+        this.state.phone
+      );
+      this.setState({
+        loading: false
+      });
+    }, 5000);
   };
 
   render() {
