@@ -49,7 +49,13 @@ class App extends React.Component {
               searchResults={this.state.searchResults}
             />
           )}
-          <div className={`mobile-menu-${this.state.showMenu}`}>
+          <div
+            className={
+              this.state.showMenu
+                ? `mobile-menu mobile-menu-true`
+                : `mobile-menu`
+            }
+          >
             <ul className="mobile-menu-list">
               <li>
                 <Link to="#">
