@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import vehicles from "./assets/vehicles.json";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -10,11 +10,23 @@ import "./App.css";
 class App extends React.Component {
   state = {
     vehicles,
-    searchResults: []
+    searchResults: [],
+    airport: "",
+    name: "",
+    email: "",
+    phone: ""
   };
 
-  populateResults = e => {
+  populateResults = (airport, name, email, phone) => {
     console.log("populating results");
+    const searchResults = this.state.vehicles;
+    this.setState({
+      airport,
+      name,
+      email,
+      phone,
+      searchResults
+    });
   };
 
   render() {
@@ -25,7 +37,10 @@ class App extends React.Component {
           {this.state.searchResults.length === 0 ? (
             <Header populateResults={this.populateResults} />
           ) : (
-            <Search />
+            <Search
+              airport={this.state.airport}
+              searchResults={this.state.searchResults}
+            />
           )}
           <Footer />
         </div>

@@ -32,7 +32,7 @@ class Header extends React.Component {
       this.setState({
         loading: false
       });
-    }, 5000);
+    }, 3000);
   };
 
   render() {
