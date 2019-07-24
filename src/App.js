@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import vehicles from "./assets/vehicles.json";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -14,7 +14,8 @@ class App extends React.Component {
     airport: "",
     name: "",
     email: "",
-    phone: ""
+    phone: "",
+    showMenu: false
   };
 
   populateResults = (airport, name, email, phone) => {
@@ -29,11 +30,17 @@ class App extends React.Component {
     });
   };
 
+  launchMobileMenu = showMenu => {
+    this.setState({
+      showMenu
+    });
+  };
+
   render() {
     return (
       <Router>
         <div className="App">
-          <Navbar />
+          <Navbar launchMobileMenu={this.launchMobileMenu} />
           {this.state.searchResults.length === 0 ? (
             <Header populateResults={this.populateResults} />
           ) : (
@@ -42,6 +49,50 @@ class App extends React.Component {
               searchResults={this.state.searchResults}
             />
           )}
+          <div className={`mobile-menu-${this.state.showMenu}`}>
+            <ul className="mobile-menu-list">
+              <li>
+                <Link to="#">
+                  <a>Menu 1</a>
+                </Link>
+              </li>
+              <li>
+                <Link to="#">
+                  <a>
+                    Menu 2 <span>▼</span>
+                  </a>
+                </Link>{" "}
+                <ul className="sub-menu">
+                  <li>
+                    <Link to="#">
+                      <a>
+                        <span>Sub-menu</span>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="#">
+                      <a>
+                        <span>Sub-menu</span>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="#">
+                      <a>
+                        <span>Sub-menu</span>
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link to="#">
+                  <a>Hover</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
           <Footer />
         </div>
       </Router>

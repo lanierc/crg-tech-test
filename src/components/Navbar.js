@@ -1,8 +1,25 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import menu from "../assets/menu.png";
 
 class Navbar extends React.Component {
+  state = {
+    showMenu: false
+  };
+
+  displayMenu = e => {
+    e.preventDefault();
+    let showMenu = this.state.showMenu;
+    showMenu = !showMenu;
+
+    this.setState({
+      showMenu
+    });
+
+    this.props.launchMobileMenu(showMenu);
+  };
+
   render() {
     return (
       <Router>
@@ -13,6 +30,11 @@ class Navbar extends React.Component {
             </div>
             <nav>
               <ul className="main-menu">
+                <li className="mobile-menu-button">
+                  <a href="#" onClick={this.displayMenu}>
+                    <img src={menu} alt="menu" />
+                  </a>
+                </li>
                 <li>
                   <Link to="#">
                     <a>Menu 1</a>
