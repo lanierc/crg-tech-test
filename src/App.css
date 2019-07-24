@@ -355,7 +355,7 @@ h1 {
   position: absolute;
   top: 9vh;
   right: -70%;
-  display: none;
+  visibility: hidden;
   transition: all 0.5s ease;
 }
 
@@ -363,6 +363,7 @@ h1 {
   display: block;
   right: 0;
   top: 9vh;
+  visibility: visible;
   bottom: 7vh;
   height: 84vh;
   width: 70%;
